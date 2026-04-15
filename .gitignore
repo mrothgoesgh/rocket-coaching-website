@@ -1,0 +1,9 @@
+# Temporary screenshots from development
+temporary screenshots/
+
+# Node modules (if ever added)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db

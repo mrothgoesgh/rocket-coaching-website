@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Coaching – Maximilian Roth · Coach & Berater Mainz</title>
+  <meta name="description" content="Coaching & Beratung für Privatpersonen und Unternehmen in Mainz. Auf Augenhöhe, lösungsorientiert, ehrlich. Kostenloses Erstgespräch.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:      #0F1E35;
+      --gold:      #C9A84C;
+      --gold-lt:   #E8C96A;
+      --gold-dk:   #8B6914;
+      --text:      #F0F0F0;
+      --muted:     rgba(240,240,240,0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--navy);
+      color: var(--text);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* ─── Typography ─── */
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    .gold-gradient-text {
+      background: linear-gradient(130deg, var(--gold-dk) 0%, var(--gold) 45%, var(--gold-lt) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(130deg, var(--gold-dk) 0%, var(--gold) 55%, var(--gold-lt) 100%);
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 15px 34px;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.25s ease;
+      box-shadow:
+        0 4px 20px rgba(201,168,76,0.22),
+        0 1px 4px rgba(139,105,20,0.4);
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+      transform: translateX(-120%);
+      transition: transform 0.5s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.015);
+      box-shadow: 0 10px 36px rgba(201,168,76,0.38), 0 2px 8px rgba(139,105,20,0.5);
+    }
+    .btn-primary:hover::after { transform: translateX(120%); }
+    .btn-primary:active { transform: translateY(0) scale(0.985); }
+    .btn-primary:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(201,168,76,0.45);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: border-color 0.2s ease, background 0.2s ease,
+                  transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.07);
+      transform: translateY(-3px);
+    }
+    .btn-ghost:active { transform: translateY(0); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 18px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(15,30,53,0.97) 0%, rgba(15,30,53,0.88) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      box-shadow: 0 0 16px rgba(201,168,76,0.15);
+      transition: box-shadow 0.25s ease;
+    }
+    .logo-wrap:hover .logo-img { box-shadow: 0 0 24px rgba(201,168,76,0.3); }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+    .logo-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: rgba(240,240,240,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; border-radius: 2px; }
+
+    /* ─── Aurora keyframes ─── */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 56px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Aurora layer — dark-mode variant, gold/amber palette */
+    .hero-aurora {
+      position: absolute;
+      inset: -10px;
+      pointer-events: none;
+      z-index: 1;
+
+      /* dark stripes + gold aurora colours */
+      --stripe: repeating-linear-gradient(
+        100deg,
+        #000 0%, #000 7%,
+        transparent 10%, transparent 12%,
+        #000 16%
+      );
+      --aurora: repeating-linear-gradient(
+        100deg,
+        #C9A84C 10%,
+        #E8C96A 15%,
+        #8B6914 20%,
+        #1a3a70 25%,
+        #C9A84C 30%
+      );
+
+      background-image: var(--stripe), var(--aurora);
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+
+      filter: blur(12px);
+      opacity: 0.45;
+      will-change: background-position;
+      animation: aurora 60s linear infinite;
+
+      /* mask: strong at top-right, fades toward bottom-left
+         keeps left column (text) clear */
+      -webkit-mask-image: radial-gradient(ellipse at 95% 5%, black 5%, transparent 68%);
+              mask-image: radial-gradient(ellipse at 95% 5%, black 5%, transparent 68%);
+    }
+
+    /* second pass: adds shimmer depth via blend */
+    .hero-aurora::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--stripe), var(--aurora);
+      background-size: 200%, 100%;
+      background-position: 50% 50%, 50% 50%;
+      animation: aurora 60s linear infinite;
+      mix-blend-mode: difference;
+    }
+
+    .hero-radials {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 85% 45%, rgba(201,168,76,0.055) 0%, transparent 55%),
+        radial-gradient(ellipse 90% 60% at 5%  90%, rgba(10,25,55,0.7)     0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(20,40,70,0.5)   0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 18%  28%, rgba(201,168,76,0.28) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 75%  18%, rgba(240,240,240,0.18) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 48%  68%, rgba(201,168,76,0.18) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 32%  52%, rgba(240,240,240,0.12) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 62%  82%, rgba(240,240,240,0.12) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 88%  58%, rgba(201,168,76,0.22) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 12%  82%, rgba(240,240,240,0.15) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 72%  42%, rgba(201,168,76,0.18) 0%, transparent 100%),
+        radial-gradient(1px   1px   at 92%  30%, rgba(240,240,240,0.1)  0%, transparent 100%),
+        radial-gradient(1px   1px   at 5%   45%, rgba(201,168,76,0.15) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 5; max-width: 700px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    h1.hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 5.5vw, 68px);
+      font-weight: 700;
+      line-height: 1.09;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2vw, 23px);
+      font-style: italic;
+      color: rgba(240,240,240,0.65);
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+    }
+
+    .hero-body {
+      font-size: 16px;
+      color: rgba(240,240,240,0.58);
+      line-height: 1.8;
+      margin-bottom: 48px;
+      max-width: 520px;
+    }
+
+    .hero-ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+    /* Large decorative logo BG */
+    .hero-logo-bg {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(560px, 42vw);
+      height: min(560px, 42vw);
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .hero-logo-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── Sections base ─── */
+    section.section { padding: 100px 56px; }
+    .container { max-width: 1160px; margin: 0 auto; }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--gold);
+    }
+
+    h2.sh {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 50px);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .gold-rule {
+      width: 52px; height: 2px;
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold), transparent);
+      margin-bottom: 22px;
+    }
+
+    .section-lead {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    /* ─── Services ─── */
+    #leistungen { background: rgba(0,0,0,0.18); }
+
+    .card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(201,168,76,0.11);
+      border-radius: 3px;
+      padding: 36px 30px;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,168,76,0.28);
+      box-shadow:
+        0 14px 44px rgba(0,0,0,0.38),
+        0 4px 12px rgba(139,105,20,0.14);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 46px; height: 46px;
+      border-radius: 3px;
+      background: rgba(201,168,76,0.09);
+      border: 1px solid rgba(201,168,76,0.22);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-body {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .card-tag {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    /* featured card */
+    .card-featured {
+      border-color: rgba(201,168,76,0.22);
+      background: rgba(201,168,76,0.04);
+    }
+    .card-featured .card-icon { background: rgba(201,168,76,0.13); }
+
+    /* ─── About ─── */
+    .about-img-wrap {
+      position: relative;
+      border-radius: 3px;
+      overflow: visible;
+    }
+    .about-img-frame {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 3px;
+      border: 1px solid rgba(201,168,76,0.14);
+      overflow: hidden;
+      position: relative;
+      background: rgba(255,255,255,0.02);
+    }
+    .about-img-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.05);
+      mix-blend-mode: luminosity;
+      opacity: 0.65;
+    }
+    .about-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,30,53,0.82) 0%, rgba(15,30,53,0.1) 55%);
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -22px; right: -22px;
+      width: 88px; height: 88px;
+    }
+    .about-badge img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(201,168,76,0.38);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.1);
+    }
+
+    .value-row {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .value-row:last-child { border-bottom: none; }
+    .value-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(201,168,76,0.55);
+    }
+    .value-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+    .value-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ─── Methodology ─── */
+    #methodik { background: rgba(0,0,0,0.18); }
+
+    .method-row {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+      transition: padding-left 0.25s ease;
+    }
+    .method-row:first-child { padding-top: 0; }
+    .method-row:last-child { border-bottom: none; }
+    .method-row:hover { padding-left: 6px; }
+
+    .method-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.35;
+      flex-shrink: 0;
+      width: 52px;
+      text-align: center;
+    }
+    .method-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .method-body { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
+
+    /* ─── Process ─── */
+    .step-circle {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.28);
+      background: rgba(201,168,76,0.05);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      background-color: var(--navy);
+    }
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .step-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ─── CTA block ─── */
+    #kontakt {
+      background:
+        radial-gradient(ellipse 90% 120% at 50% 50%, rgba(201,168,76,0.058) 0%, transparent 65%),
+        rgba(0,0,0,0.1);
+      border-top:    1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 96px;
+      line-height: 0.6;
+      color: var(--gold);
+      opacity: 0.18;
+      display: block;
+      margin-bottom: -12px;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: rgba(7,14,26,0.95);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 56px 56px 36px;
+    }
+
+    .footer-link {
+      font-size: 14px;
+      color: rgba(240,240,240,0.42);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-link:hover { color: var(--gold); }
+    .footer-link:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; border-radius: 2px; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links .hide-mobile { display: none; }
+      section.section { padding: 72px 24px; }
+      .hero { padding: 116px 24px 80px; }
+      footer { padding: 44px 24px 28px; }
+      .hero-logo-bg { display: none; }
+    }
+    @media (max-width: 640px) {
+      h1.hero-h1 { font-size: 38px; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav>
+  <a href="#" class="logo-wrap">
+    <img src="brand_assets/Logo Coaching.jpg" alt="Rocket Coaching Logo" class="logo-img">
+    <div>
+      <div class="logo-name">Maximilian Roth</div>
+      <div class="logo-sub">Rocket Coaching</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="#ueber-mich" class="hide-mobile">Über mich</a>
+    <a href="#leistungen" class="hide-mobile">Leistungen</a>
+    <a href="#methodik" class="hide-mobile">Methodik</a>
+    <a href="#ablauf" class="hide-mobile">Ablauf</a>
+    <a href="#kontakt" class="btn-primary" style="font-size:13px; padding:10px 22px;">Kostenloses Gespräch</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-aurora"></div>
+  <div class="hero-radials"></div>
+  <div class="hero-dots"></div>
+
+  <!-- large decorative logo -->
+  <div class="hero-logo-bg">
+    <img src="brand_assets/Logo Coaching.jpg" alt="">
+  </div>
+
+  <div class="hero-content">
+    <div class="eyebrow">Coaching &amp; Beratung · Mainz</div>
+
+    <h1 class="hero-h1">
+      In jedem Menschen<br>
+      steckt <em class="gold-gradient-text" style="font-style:italic;">ungenutztes</em><br>
+      Potenzial.
+    </h1>
+
+    <p class="hero-tagline">Klar denken. Neue Perspektiven finden. Den eigenen Weg gehen.</p>
+
+    <p class="hero-body">
+      Coaching &amp; Beratung für Privatpersonen und Unternehmen –<br>
+      auf Augenhöhe, lösungsorientiert, ehrlich.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#kontakt" class="btn-primary">
+        Kostenloses Vorgespräch buchen
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section class="section" id="leistungen">
+  <div class="container">
+
+    <div style="margin-bottom:60px;">
+      <div class="section-eyebrow">Leistungen</div>
+      <h2 class="sh">Was ich anbiete</h2>
+      <div class="gold-rule"></div>
+      <p class="section-lead">Individuell abgestimmt – ob Privatperson oder Führungskraft.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:22px;">
+
+      <div class="card">
+        <div class="card-icon">
+          <!-- Rocket / arrow icon -->
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <div class="card-title">Business-Life Coaching</div>
+        <p class="card-body">Individueller, zielorientierter Prozess. 90 Min./Sitzung, Abstand 3–4 Wochen. Präsenz &amp; Online – flexibel auf Ihre Situation abgestimmt.</p>
+        <span class="card-tag">Privat &amp; Business</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="card-title">Deeskalations&shy;management</div>
+        <p class="card-body">Früherkennung von Konflikten, Kommunikationstechniken, Körpersprache und Verhandlungsführung für Teams und Führungskräfte.</p>
+        <span class="card-tag">Unternehmen &amp; Teams</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </div>
+        <div class="card-title">LINC Personality Profiling</div>
+        <p class="card-body">Wissenschaftlich fundierte Persönlichkeitsdiagnostik als Grundlage für Selbstreflexion und nachhaltige persönliche Entwicklung.</p>
+        <span class="card-tag">Privat &amp; Teams</span>
+      </div>
+
+      <div class="card card-featured">
+        <div class="card-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="card-title">Kostenloses Vorgespräch</div>
+        <p class="card-body">30–45 Min., unverbindlich und vertraulich. Anliegen klären, Coaching-Methode kennenlernen, Passung prüfen – ohne Verpflichtung.</p>
+        <span class="card-tag">Kostenlos &amp; unverbindlich</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════ -->
+<section class="section" id="ueber-mich">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:88px; align-items:center;">
+
+      <!-- Image column -->
+      <div class="about-img-wrap" style="padding-bottom:22px; padding-right:22px;">
+        <div class="about-img-frame">
+          <img src="https://placehold.co/520x650/0F1E35/C9A84C?text=Maximilian+Roth" alt="Maximilian Roth">
+          <div class="about-img-overlay"></div>
+        </div>
+        <div class="about-badge">
+          <img src="brand_assets/Logo Coaching.jpg" alt="Rocket Coaching">
+        </div>
+      </div>
+
+      <!-- Content column -->
+      <div>
+        <div class="section-eyebrow">Über mich</div>
+        <h2 class="sh">Coach, Pädagoge<br>&amp; Berater</h2>
+        <div class="gold-rule"></div>
+
+        <p style="font-size:16.5px; color:rgba(240,240,240,0.68); line-height:1.85; margin-bottom:20px;">
+          Ich bin Maximilian Roth – Coach, Pädagoge und Berater aus Mainz am Rhein. Mit einem Hintergrund in Erziehungswissenschaft und Musikwissenschaft verbinde ich analytisches Denken mit unkonventionellen Perspektiven.
+        </p>
+        <p style="font-size:16.5px; color:rgba(240,240,240,0.68); line-height:1.85; margin-bottom:36px;">
+          Meine Arbeit gründet auf echtem Interesse am Menschen, strukturierter Arbeitsweise und dem Vertrauen, dass jede Person die Ressourcen für ihren eigenen Weg bereits in sich trägt.
+        </p>
+
+        <div style="margin-bottom:40px;">
+          <div class="value-row">
+            <div class="value-dot"></div>
+            <div>
+              <div class="value-title">Echtes Interesse am Menschen</div>
+              <div class="value-desc">Jede Person ist einzigartig. Ich begegne ihr auf Augenhöhe – nicht als Experte von oben.</div>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-dot"></div>
+            <div>
+              <div class="value-title">Empathie &amp; Ehrlichkeit</div>
+              <div class="value-desc">Kein Schönreden, keine fertigen Antworten – klare Aussagen, ehrliches Feedback.</div>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-dot"></div>
+            <div>
+              <div class="value-title">Strukturierte, klare Arbeitsweise</div>
+              <div class="value-desc">Lösungsorientiert und analytisch – jeder Prozess endet mit konkreten nächsten Schritten.</div>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-dot"></div>
+            <div>
+              <div class="value-title">Vertrauen in Ihre Ressourcen</div>
+              <div class="value-desc">Sie haben die Antworten. Ich unterstütze Sie dabei, Klarheit zu gewinnen.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#kontakt" class="btn-ghost">Kostenloses Gespräch vereinbaren</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     METHODOLOGY
+═══════════════════════════════════════ -->
+<section class="section" id="methodik">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1.6fr; gap:80px; align-items:start;">
+
+      <div style="position:sticky; top:110px;">
+        <div class="section-eyebrow">Methodik</div>
+        <h2 class="sh" style="font-size:clamp(30px,3.5vw,44px);">Mein<br>theoretischer<br>Rahmen</h2>
+        <div class="gold-rule"></div>
+        <p style="font-size:15.5px; color:var(--muted); line-height:1.8;">
+          Drei wissenschaftlich fundierte Ansätze bilden das Fundament meiner Arbeit. Praxisnah, lösungsorientiert.
+        </p>
+      </div>
+
+      <div>
+        <div class="method-row">
+          <div class="method-num">01</div>
+          <div>
+            <div class="method-title">Systemische Theorie</div>
+            <p class="method-body">Der Mensch im Kontext seiner Beziehungen und Umwelten. Veränderungen entstehen im Wechselspiel mit dem sozialen System – nicht isoliert.</p>
+          </div>
+        </div>
+        <div class="method-row">
+          <div class="method-num">02</div>
+          <div>
+            <div class="method-title">Konstruktivistisches Menschenbild</div>
+            <p class="method-body">Wirklichkeit wird aktiv gestaltet. Jeder Mensch konstruiert seine eigene Perspektive – und hat die Fähigkeit, sie zu verändern und neue Denkweisen zu entwickeln.</p>
+          </div>
+        </div>
+        <div class="method-row">
+          <div class="method-num">03</div>
+          <div>
+            <div class="method-title">Konfliktmanagement</div>
+            <p class="method-body">Win-win-Lösungen, Deeskalation, konstruktive Konfliktbearbeitung. Konflikte als Chance zur Klärung und gemeinsamen Weiterentwicklung.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PROCESS
+═══════════════════════════════════════ -->
+<section class="section" id="ablauf">
+  <div class="container">
+
+    <div style="text-align:center; margin-bottom:64px;">
+      <div class="section-eyebrow" style="justify-content:center; display:flex; align-items:center; gap:14px;">
+        <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Ablauf
+        <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
+      </div>
+      <h2 class="sh">So läuft es ab</h2>
+      <div class="gold-rule" style="margin: 0 auto 18px;"></div>
+      <p class="section-lead" style="margin:0 auto; text-align:center;">Klar strukturiert. Flexibel in der Umsetzung.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:48px; max-width:860px; margin:0 auto; position:relative;">
+
+      <!-- connector lines -->
+      <div style="position:absolute; top:28px; left:calc(33.33% - 28px + 29px); right:calc(33.33% - 28px + 29px); height:1px; background:linear-gradient(90deg, rgba(201,168,76,0.3), rgba(201,168,76,0.12), rgba(201,168,76,0.3)); pointer-events:none;"></div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+        <div class="step-circle">1</div>
+        <div>
+          <div class="step-title">Kostenloses Erstgespräch</div>
+          <p class="step-body">30–45 Min. Unverbindlich & vertraulich. Anliegen klären, Methode kennenlernen, Passung prüfen.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+        <div class="step-circle">2</div>
+        <div>
+          <div class="step-title">Individueller Prozess</div>
+          <p class="step-body">90 Min./Sitzung, 3–4 Wochen Abstand. Flexibel in Dauer und Frequenz. Präsenz oder Online.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+        <div class="step-circle">3</div>
+        <div>
+          <div class="step-title">Zielorientierter Abschluss</div>
+          <p class="step-body">Jeder Prozess endet mit konkreten nächsten Schritten und nachhaltigem, messbarem Nutzen.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA
+═══════════════════════════════════════ -->
+<section class="section" id="kontakt">
+  <div class="container" style="max-width:680px; text-align:center;">
+
+    <div class="section-eyebrow" style="justify-content:center; display:flex; align-items:center; gap:14px;">
+      <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
+      Kontakt
+      <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
+    </div>
+
+    <h2 class="sh">Bereit für Klarheit?</h2>
+    <div class="gold-rule" style="margin:0 auto 30px;"></div>
+
+    <div style="margin-bottom:32px;">
+      <span class="quote-mark">"</span>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(19px,2.2vw,24px); font-style:italic; color:rgba(240,240,240,0.72); line-height:1.6;">
+        Wir klären, wo Sie stehen – und was als nächstes sinnvoll ist.
+      </p>
+    </div>
+
+    <p style="font-size:15.5px; color:var(--muted); line-height:1.8; margin-bottom:44px;">
+      Das erste Gespräch ist kostenlos, unverbindlich und vertraulich.<br>
+      30–45 Minuten. Präsenz in Mainz oder online.
+    </p>
+
+    <a href="mailto:info@rocket-coaching.com" class="btn-primary" style="font-size:16px; padding:17px 40px;">
+      Kostenloses Vorgespräch buchen
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+
+    <p style="margin-top:24px; font-size:13px; color:rgba(240,240,240,0.3);">Konkret. Vertraulich. Auf Augenhöhe.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; margin-bottom:44px;">
+
+      <div style="max-width:300px;">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+          <img src="brand_assets/Logo Coaching.jpg" alt="Logo" style="width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(201,168,76,0.3);">
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);line-height:1.2;">Maximilian Roth</div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Rocket Coaching</div>
+          </div>
+        </div>
+        <p style="font-size:14px; color:rgba(240,240,240,0.35); line-height:1.75; font-style:italic; font-family:'Cormorant Garamond',serif;">
+          Klarheit schaffen. Perspektiven öffnen.<br>Den eigenen Weg gehen.
+        </p>
+      </div>
+
+      <div style="display:flex; gap:64px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Navigation</div>
+          <a href="#ueber-mich" class="footer-link">Über mich</a>
+          <a href="#leistungen" class="footer-link">Leistungen</a>
+          <a href="#methodik" class="footer-link">Methodik</a>
+          <a href="#ablauf" class="footer-link">Ablauf</a>
+          <a href="#kontakt" class="footer-link">Kontakt</a>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Kontakt</div>
+          <span class="footer-link" style="cursor:default;">Mainz am Rhein</span>
+          <a href="mailto:info@rocket-coaching.com" class="footer-link">info@rocket-coaching.com</a>
+          <a href="#" class="footer-link">rocket-coaching.com</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <p style="font-size:13px; color:rgba(240,240,240,0.28);">© 2026 Maximilian Roth · Rocket Coaching · Mainz</p>
+      <div style="display:flex; gap:24px;">
+        <a href="#" style="font-size:13px; color:rgba(240,240,240,0.28); text-decoration:none;" onmouseover="this.style.color='rgba(201,168,76,0.7)'" onmouseout="this.style.color='rgba(240,240,240,0.28)'">Impressum</a>
+        <a href="#" style="font-size:13px; color:rgba(240,240,240,0.28); text-decoration:none;" onmouseover="this.style.color='rgba(201,168,76,0.7)'" onmouseout="this.style.color='rgba(240,240,240,0.28)'">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
