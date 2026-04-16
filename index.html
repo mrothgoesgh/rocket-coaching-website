@@ -281,7 +281,76 @@
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 5; max-width: 700px; }
+    .hero-content { position: relative; z-index: 5; max-width: 1160px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(280px,1.1fr) minmax(360px,520px); gap:84px; align-items:center; }
+    .hero-name-wrap { grid-column: 1 / -1; text-align: center; }
+    .hero-name {
+      margin: 0 auto 100px;
+      max-width: 760px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .hero-main { display:flex; flex-direction:column; justify-content:center; text-align:center; }
+    .hero-grid .hero-hero-image { justify-self:end; transform: translateX(92px); }
+    .hero-name-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(70px, 9vw, 120px);
+      font-weight: 700;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .hero-name-subtitle {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0;
+    }
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      margin-bottom: 26px;
+      max-width: fit-content;
+    }
+    .hero-points { margin-top: 28px; display: grid; gap: 16px; }
+    .hero-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      max-width: 520px;
+    }
+    .hero-point::before {
+      content: '•';
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 1;
+      margin-top: 3px;
+    }
+    .hero-hero-image {
+      position: relative;
+      width: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 35px 100px rgba(0,0,0,0.24);
+      border: 1px solid rgba(255,255,255,0.06);
+      min-height: 520px;
+      background: rgba(255,255,255,0.04);
+    }
+    .hero-hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .eyebrow {
       display: inline-flex;
@@ -656,12 +725,12 @@
   </a>
 
   <div class="nav-links">
-    <a href="#ueber-mich" class="hide-mobile">Über mich</a>
-    <a href="#leistungen" class="hide-mobile">Leistungen</a>
-    <a href="#deeskalationsmanagement" class="hide-mobile">Deeskalationsmanagement</a>
-    <a href="#linc-personality" class="hide-mobile">LINC Personality Profiling</a>
-    <a href="#methodik" class="hide-mobile">Methodik</a>
-    <a href="#ablauf" class="hide-mobile">Ablauf</a>
+    <a href="ueber-mich.html" class="hide-mobile">Über mich</a>
+    <a href="meine-leistungen.html" class="hide-mobile">Meine Leistungen</a>
+    <a href="coaching.html" class="hide-mobile">Coaching</a>
+    <a href="deeskalationsmanagement.html" class="hide-mobile">Deeskalationsmanagement</a>
+    <a href="linc-personality-profiling.html" class="hide-mobile">Linc Personality Profiling</a>
+    <a href="kontakt.html" class="hide-mobile">Kontakt</a>
     <a href="#kontakt" class="btn-primary" style="font-size:13px; padding:10px 22px;">Kostenloses Gespräch</a>
   </div>
 </nav>
@@ -681,162 +750,38 @@
   </div>
 
   <div class="hero-content">
-    <div class="eyebrow">Coaching &amp; Beratung · Mainz</div>
-
-    <h1 class="hero-h1">
-      In jedem Menschen<br>
-      steckt <em class="gold-gradient-text" style="font-style:italic;">ungenutztes</em><br>
-      Potenzial.
-    </h1>
-
-    <p class="hero-tagline">Klar denken. Neue Perspektiven finden. Den eigenen Weg gehen.</p>
-
-    <p class="hero-body">
-      Coaching &amp; Beratung für Privatpersonen und Unternehmen –<br>
-      auf Augenhöhe, lösungsorientiert, ehrlich.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#kontakt" class="btn-primary">
-        Kostenloses Vorgespräch buchen
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
+    <div class="hero-name-wrap">
+      <div class="hero-name">
+        <div class="hero-name-title">Maximilian Roth</div>
+        <div class="hero-name-subtitle">Coaching · Beratung · Training</div>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <div class="hero-highlight">Coaching für Unternehmen &amp; Privatpersonen</div>
 
+        <h1 class="hero-h1">
+          In jedem Menschen steckt <em class="gold-gradient-text" style="font-style:italic;">ungenutztes</em><br>
+          Potenzial.
+        </h1>
 
-<!-- ═══════════════════════════════════════
-     SERVICES
-═══════════════════════════════════════ -->
-<section class="section" id="leistungen">
-  <div class="container">
-
-    <div style="margin-bottom:60px;">
-      <div class="section-eyebrow">Leistungen</div>
-      <h2 class="sh">Was ich anbiete</h2>
-      <div class="gold-rule"></div>
-      <p class="section-lead">Individuell abgestimmt – ob Privatperson oder Führungskraft.</p>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:22px;">
-
-      <div class="card">
-        <div class="card-icon">
-          <!-- Rocket / arrow icon -->
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-          </svg>
+        <div class="hero-points">
+          <div class="hero-point">Klar denken.</div>
+          <div class="hero-point">Neue Perspektiven finden.</div>
+          <div class="hero-point">Den eigenen Weg gehen.</div>
         </div>
-        <div class="card-title">Business-Life Coaching</div>
-        <p class="card-body">Individueller, zielorientierter Prozess. 90 Min./Sitzung, Abstand 3–4 Wochen. Präsenz &amp; Online – flexibel auf Ihre Situation abgestimmt.</p>
-        <span class="card-tag">Privat &amp; Business</span>
-      </div>
 
-      <div class="card" id="deeskalationsmanagement">
-        <div class="card-icon">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <div class="card-title">Deeskalations&shy;management</div>
-        <p class="card-body">Früherkennung von Konflikten, Kommunikationstechniken, Körpersprache und Verhandlungsführung für Teams und Führungskräfte.</p>
-        <span class="card-tag">Unternehmen &amp; Teams</span>
-      </div>
-
-      <div class="card" id="linc-personality">
-        <div class="card-icon">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-          </svg>
-        </div>
-        <div class="card-title">LINC Personality Profiling</div>
-        <p class="card-body">Wissenschaftlich fundierte Persönlichkeitsdiagnostik als Grundlage für Selbstreflexion und nachhaltige persönliche Entwicklung.</p>
-        <span class="card-tag">Privat &amp; Teams</span>
-      </div>
-
-      <div class="card card-featured">
-        <div class="card-icon">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
-        <div class="card-title">Kostenloses Vorgespräch</div>
-        <p class="card-body">30–45 Min., unverbindlich und vertraulich. Anliegen klären, Coaching-Methode kennenlernen, Passung prüfen – ohne Verpflichtung.</p>
-        <span class="card-tag">Kostenlos &amp; unverbindlich</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     ABOUT
-═══════════════════════════════════════ -->
-<section class="section" id="ueber-mich">
-  <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:88px; align-items:center;">
-
-      <!-- Image column -->
-      <div class="about-img-wrap" style="padding-bottom:22px; padding-right:22px;">
-        <div class="about-img-frame">
-          <img src="https://placehold.co/520x650/0F1E35/C9A84C?text=Maximilian+Roth" alt="Maximilian Roth">
-          <div class="about-img-overlay"></div>
-        </div>
-        <div class="about-badge">
-          <img src="brand_assets/Logo Coaching.jpg" alt="Rocket Coaching">
+        <div class="hero-ctas" style="margin-top:36px;">
+          <a href="coaching.html" class="btn-primary">
+            Erfahren Sie mehr über mein Coachingkonzept
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Content column -->
-      <div>
-        <div class="section-eyebrow">Über mich</div>
-        <h2 class="sh">Coach, Pädagoge<br>&amp; Berater</h2>
-        <div class="gold-rule"></div>
-
-        <p style="font-size:16.5px; color:rgba(240,240,240,0.68); line-height:1.85; margin-bottom:20px;">
-          Ich bin Maximilian Roth – Coach, Pädagoge und Berater aus Mainz am Rhein. Mit einem Hintergrund in Erziehungswissenschaft und Musikwissenschaft verbinde ich analytisches Denken mit unkonventionellen Perspektiven.
-        </p>
-        <p style="font-size:16.5px; color:rgba(240,240,240,0.68); line-height:1.85; margin-bottom:36px;">
-          Meine Arbeit gründet auf echtem Interesse am Menschen, strukturierter Arbeitsweise und dem Vertrauen, dass jede Person die Ressourcen für ihren eigenen Weg bereits in sich trägt.
-        </p>
-
-        <div style="margin-bottom:40px;">
-          <div class="value-row">
-            <div class="value-dot"></div>
-            <div>
-              <div class="value-title">Echtes Interesse am Menschen</div>
-              <div class="value-desc">Jede Person ist einzigartig. Ich begegne ihr auf Augenhöhe – nicht als Experte von oben.</div>
-            </div>
-          </div>
-          <div class="value-row">
-            <div class="value-dot"></div>
-            <div>
-              <div class="value-title">Empathie &amp; Ehrlichkeit</div>
-              <div class="value-desc">Kein Schönreden, keine fertigen Antworten – klare Aussagen, ehrliches Feedback.</div>
-            </div>
-          </div>
-          <div class="value-row">
-            <div class="value-dot"></div>
-            <div>
-              <div class="value-title">Strukturierte, klare Arbeitsweise</div>
-              <div class="value-desc">Lösungsorientiert und analytisch – jeder Prozess endet mit konkreten nächsten Schritten.</div>
-            </div>
-          </div>
-          <div class="value-row">
-            <div class="value-dot"></div>
-            <div>
-              <div class="value-title">Vertrauen in Ihre Ressourcen</div>
-              <div class="value-desc">Sie haben die Antworten. Ich unterstütze Sie dabei, Klarheit zu gewinnen.</div>
-            </div>
-          </div>
-        </div>
-
-        <a href="#kontakt" class="btn-ghost">Kostenloses Gespräch vereinbaren</a>
+      <div class="hero-hero-image">
+        <img src="brand_assets/Logo Coaching.jpg" alt="Maximilian Roth Coaching">
       </div>
-
     </div>
   </div>
 </section>
@@ -942,35 +887,35 @@
      CTA
 ═══════════════════════════════════════ -->
 <section class="section" id="kontakt">
-  <div class="container" style="max-width:680px; text-align:center;">
+  <div class="container" style="max-width:680px;text-align:center;">
 
-    <div class="section-eyebrow" style="justify-content:center; display:flex; align-items:center; gap:14px;">
+    <div style="display:flex;justify-content:center;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">
       <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
       Kontakt
       <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
     </div>
 
-    <h2 class="sh">Bereit für Klarheit?</h2>
+    <h2 class="sh">Lernen Sie mich kennen.</h2>
     <div class="gold-rule" style="margin:0 auto 30px;"></div>
 
     <div style="margin-bottom:32px;">
       <span class="quote-mark">"</span>
-      <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(19px,2.2vw,24px); font-style:italic; color:rgba(240,240,240,0.72); line-height:1.6;">
-        Wir klären, wo Sie stehen – und was als nächstes sinnvoll ist.
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,23px);font-style:italic;color:rgba(240,240,240,0.72);line-height:1.6;">
+        Das erste Gespräch kostet nichts – außer 30 Minuten Zeit.
       </p>
     </div>
 
-    <p style="font-size:15.5px; color:var(--muted); line-height:1.8; margin-bottom:44px;">
-      Das erste Gespräch ist kostenlos, unverbindlich und vertraulich.<br>
-      30–45 Minuten. Präsenz in Mainz oder online.
+    <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:44px;">
+      Kostenlos, unverbindlich und vertraulich.<br>
+      Online oder telefonisch.
     </p>
 
-    <a href="mailto:info@rocket-coaching.com" class="btn-primary" style="font-size:16px; padding:17px 40px;">
-      Kostenloses Vorgespräch buchen
+    <a href="kontakt.html" class="btn-primary" style="font-size:16px;padding:17px 40px;">
+      Kostenloses Vorgespräch vereinbaren
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
 
-    <p style="margin-top:24px; font-size:13px; color:rgba(240,240,240,0.3);">Konkret. Vertraulich. Auf Augenhöhe.</p>
+    <p style="margin-top:24px;font-size:13px;color:rgba(240,240,240,0.3);">Konkret. Vertraulich. Auf Augenhöhe.</p>
 
   </div>
 </section>
@@ -999,8 +944,8 @@
       <div style="display:flex; gap:64px; flex-wrap:wrap;">
         <div>
           <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Navigation</div>
-          <a href="#ueber-mich" class="footer-link">Über mich</a>
-          <a href="#leistungen" class="footer-link">Leistungen</a>
+          <a href="ueber-mich.html" class="footer-link">Über mich</a>
+          <a href="coaching.html" class="footer-link">Coaching</a>
           <a href="#methodik" class="footer-link">Methodik</a>
           <a href="#ablauf" class="footer-link">Ablauf</a>
           <a href="#kontakt" class="footer-link">Kontakt</a>
