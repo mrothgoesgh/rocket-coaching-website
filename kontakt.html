@@ -267,6 +267,14 @@
       footer { padding: 44px 24px 28px; }
       .contact-form { grid-template-columns: 1fr; }
       .logo-bg { display: none; }
+      .step-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .contact-info-grid { grid-template-columns: 1fr !important; }
+      footer > .container > div:first-child { flex-direction: column; gap: 32px; }
+      footer > .container > div:first-child > div:last-child { flex-direction: column; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero-content h1 { font-size: 34px !important; }
+      .btn-primary { font-size: 14px; padding: 13px 22px; }
     }
   </style>
 </head>
@@ -409,7 +417,7 @@
     </script>
 
     <div style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.14);border-radius:3px;padding:36px 32px;margin-top:48px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+      <div class="contact-info-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
         <div>
           <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">E-Mail</div>
           <a href="mailto:info@rocket-coaching.com" style="font-size:15px;color:var(--text);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:10px;transition:color 0.2s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">
@@ -449,7 +457,7 @@
       Gemeinsam klären wir, wie wir am besten zusammenarbeiten können.
     </p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px;">
+    <div class="step-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px;">
       <div style="text-align:center;">
         <div style="font-size:28px;font-weight:700;color:var(--gold);margin-bottom:10px;">1</div>
         <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;">Nachricht erhalten</p>

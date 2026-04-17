@@ -371,9 +371,16 @@
       .page-hero { padding: 120px 24px 72px; }
       footer { padding: 44px 24px 28px; }
       .logo-bg { display: none; }
+      .bio-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .bio-grid img { max-width: 280px; margin: 0 auto; display: block; }
+      .values-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .values-grid > div[style*="sticky"] { position: static !important; }
+      footer > .container > div:first-child { flex-direction: column; gap: 32px; }
+      footer > .container > div:first-child > div:last-child { flex-direction: column; gap: 32px; }
     }
-    @media (max-width: 640px) {
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 480px) {
+      .page-hero-content h1 { font-size: 34px !important; }
+      .btn-primary { font-size: 14px; padding: 13px 22px; }
     }
   </style>
 </head>
@@ -430,7 +437,7 @@
 ═══════════════════════════════════════ -->
 <section class="section" id="bio">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:88px;align-items:center;">
+    <div class="bio-grid" style="display:grid;grid-template-columns:1fr 1.2fr;gap:88px;align-items:center;">
 
       <!-- Image column -->
       <div style="position:relative;padding-bottom:22px;padding-right:22px;">
@@ -491,7 +498,7 @@
 ═══════════════════════════════════════ -->
 <section class="section" style="background:rgba(0,0,0,0.18);position:relative;overflow:hidden;" id="werte">
   <div class="container" style="position:relative;z-index:1;">
-    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
+    <div class="values-grid" style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
 
       <div style="position:sticky;top:110px;">
         <div class="section-eyebrow">Haltung</div>

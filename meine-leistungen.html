@@ -246,6 +246,12 @@
       .page-hero { padding: 120px 24px 72px; }
       footer { padding: 44px 24px 28px; }
       .logo-bg { display: none; }
+      footer > .container > div:first-child { flex-direction: column; gap: 32px; }
+      footer > .container > div:first-child > div:last-child { flex-direction: column; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero-content h1 { font-size: 34px !important; }
+      .btn-primary { font-size: 14px; padding: 13px 22px; }
     }
   </style>
 </head>

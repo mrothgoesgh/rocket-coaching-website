@@ -700,14 +700,49 @@
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links .hide-mobile { display: none; }
-      section.section { padding: 72px 24px; }
-      .hero { padding: 116px 24px 80px; }
+      section.section { padding: 80px 24px; }
+      .hero { padding: 110px 24px 80px; justify-content: flex-start; }
       footer { padding: 44px 24px 28px; }
       .hero-logo-bg { display: none; }
+
+      /* Stack hero grid vertically */
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        justify-items: center;
+      }
+      .hero-grid .hero-hero-image {
+        transform: none;
+        justify-self: center;
+        width: min(260px, 70vw);
+      }
+      .hero-grid .hero-hero-image img {
+        width: 100%;
+        height: auto;
+      }
+      .hero-main { text-align: center; align-items: center; }
+      h1.hero-h1 { font-size: clamp(32px, 8vw, 48px); }
+
+      /* Name block */
+      .hero-name-title { font-size: clamp(48px, 12vw, 80px); }
+      .hero-name { margin-bottom: 48px; }
+
+      /* Ablauf: single column */
+      #ablauf .container > div:last-child {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+        max-width: 400px !important;
+      }
+      #ablauf .container > div:last-child > div[style*="absolute"] { display: none; }
+
+      /* Footer */
+      footer .container > div:first-child { flex-direction: column; gap: 32px; }
     }
-    @media (max-width: 640px) {
-      h1.hero-h1 { font-size: 38px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+
+    @media (max-width: 480px) {
+      h1.hero-h1 { font-size: 30px; }
+      .hero-name-title { font-size: 48px; }
+      .btn-primary { font-size: 14px; padding: 14px 24px; }
     }
   </style>
 </head>

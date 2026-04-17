@@ -247,6 +247,16 @@
       .service-block { grid-template-columns: 1fr; gap: 40px; }
       .service-block.reverse { direction: ltr; }
       .logo-bg { display: none; }
+      .step-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .step-grid > div[style*="absolute"] { display: none; }
+      footer > .container > div:first-child { flex-direction: column; gap: 32px; }
+      footer > .container > div:first-child > div:last-child { flex-direction: column; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero-content h1 { font-size: 34px !important; }
+      .service-num { font-size: 72px !important; }
+      .service-detail-title { font-size: 28px !important; }
+      .btn-primary { font-size: 14px; padding: 13px 22px; }
     }
   </style>
 </head>
@@ -373,7 +383,7 @@
       <div class="gold-rule" style="margin:0 auto 18px;"></div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:860px;margin:0 auto;position:relative;">
+    <div class="step-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:860px;margin:0 auto;position:relative;">
       <div style="position:absolute;top:28px;left:calc(33.33% - 28px + 29px);right:calc(33.33% - 28px + 29px);height:1px;background:linear-gradient(90deg, rgba(201,168,76,0.3), rgba(201,168,76,0.12), rgba(201,168,76,0.3));pointer-events:none;"></div>
 
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;">
