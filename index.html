@@ -199,6 +199,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 130px 56px 100px;
       position: relative;
       overflow: hidden;
@@ -281,8 +282,8 @@
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 5; max-width: 1160px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(360px,520px) minmax(280px,1.1fr); gap:84px; align-items:center; }
+    .hero-content { position: relative; z-index: 5; max-width: 1160px; margin: 0 auto; width: 100%; }
+    .hero-grid { display: grid; grid-template-columns: minmax(360px,520px) minmax(280px,1.1fr); gap:84px; align-items:center; justify-content: center; }
     .hero-name-wrap { grid-column: 1 / -1; text-align: center; }
     .hero-name {
       margin: 0 auto 100px;
@@ -416,7 +417,7 @@
     .hero-logo-bg img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ─── Sections base ─── */
-    section.section { padding: 100px 56px; }
+    section.section { padding: 140px 56px; }
     .container { max-width: 1160px; margin: 0 auto; }
 
     .section-eyebrow {
@@ -762,74 +763,21 @@
       </div>
 
       <div class="hero-main">
-        <div class="hero-highlight">Coaching für Unternehmen &amp; Privatpersonen</div>
-
         <h1 class="hero-h1">
-          In jedem Menschen steckt <em class="gold-gradient-text" style="font-style:italic;">ungenutztes</em><br>
-          Potenzial.
+          In jedem Menschen steckt <em class="gold-gradient-text" style="font-style:italic;">ungenutztes</em> Potenzial.
         </h1>
-
-        <div class="hero-points">
-          <div class="hero-point">Klar denken.</div>
-          <div class="hero-point">Neue Perspektiven finden.</div>
-          <div class="hero-point">Den eigenen Weg gehen.</div>
-        </div>
-
-        <div class="hero-ctas" style="margin-top:36px;">
-          <a href="coaching.html" class="btn-primary">
-            Erfahren Sie mehr über mein Coachingkonzept
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
       </div>
+    </div>
+
+    <div style="text-align:center; margin-top:80px;">
+      <a href="coaching.html" class="btn-primary">
+        Erfahren Sie mehr über mein Coachingkonzept
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════
-     METHODOLOGY
-═══════════════════════════════════════ -->
-<section class="section" id="methodik">
-  <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1.6fr; gap:80px; align-items:start;">
-
-      <div style="position:sticky; top:110px;">
-        <div class="section-eyebrow">Methodik</div>
-        <h2 class="sh" style="font-size:clamp(30px,3.5vw,44px);">Mein<br>theoretischer<br>Rahmen</h2>
-        <div class="gold-rule"></div>
-        <p style="font-size:15.5px; color:var(--muted); line-height:1.8;">
-          Drei wissenschaftlich fundierte Ansätze bilden das Fundament meiner Arbeit. Praxisnah, lösungsorientiert.
-        </p>
-      </div>
-
-      <div>
-        <div class="method-row">
-          <div class="method-num">01</div>
-          <div>
-            <div class="method-title">Systemische Theorie</div>
-            <p class="method-body">Der Mensch im Kontext seiner Beziehungen und Umwelten. Veränderungen entstehen im Wechselspiel mit dem sozialen System – nicht isoliert.</p>
-          </div>
-        </div>
-        <div class="method-row">
-          <div class="method-num">02</div>
-          <div>
-            <div class="method-title">Konstruktivistisches Menschenbild</div>
-            <p class="method-body">Wirklichkeit wird aktiv gestaltet. Jeder Mensch konstruiert seine eigene Perspektive – und hat die Fähigkeit, sie zu verändern und neue Denkweisen zu entwickeln.</p>
-          </div>
-        </div>
-        <div class="method-row">
-          <div class="method-num">03</div>
-          <div>
-            <div class="method-title">Konfliktmanagement</div>
-            <p class="method-body">Win-win-Lösungen, Deeskalation, konstruktive Konfliktbearbeitung. Konflikte als Chance zur Klärung und gemeinsamen Weiterentwicklung.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════
@@ -849,12 +797,12 @@
       <p class="section-lead" style="margin:0 auto; text-align:center;">Klar strukturiert. Flexibel in der Umsetzung.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:48px; max-width:860px; margin:0 auto; position:relative;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:64px; max-width:960px; margin:0 auto; position:relative;">
 
       <!-- connector lines -->
       <div style="position:absolute; top:28px; left:calc(33.33% - 28px + 29px); right:calc(33.33% - 28px + 29px); height:1px; background:linear-gradient(90deg, rgba(201,168,76,0.3), rgba(201,168,76,0.12), rgba(201,168,76,0.3)); pointer-events:none;"></div>
 
-      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:32px;">
         <div class="step-circle">1</div>
         <div>
           <div class="step-title">Kostenloses Erstgespräch</div>
@@ -862,7 +810,7 @@
         </div>
       </div>
 
-      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:32px;">
         <div class="step-circle">2</div>
         <div>
           <div class="step-title">Individueller Prozess</div>
@@ -870,7 +818,7 @@
         </div>
       </div>
 
-      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px;">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:32px;">
         <div class="step-circle">3</div>
         <div>
           <div class="step-title">Zielorientierter Abschluss</div>
@@ -893,16 +841,6 @@
       <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
       Kontakt
       <span style="width:28px;height:1px;background:var(--gold);display:inline-block;"></span>
-    </div>
-
-    <h2 class="sh">Lernen Sie mich kennen.</h2>
-    <div class="gold-rule" style="margin:0 auto 30px;"></div>
-
-    <div style="margin-bottom:32px;">
-      <span class="quote-mark">"</span>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,23px);font-style:italic;color:rgba(240,240,240,0.72);line-height:1.6;">
-        Das erste Gespräch kostet nichts – außer 30 Minuten Zeit.
-      </p>
     </div>
 
     <p style="font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:44px;">
@@ -946,7 +884,6 @@
           <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Navigation</div>
           <a href="ueber-mich.html" class="footer-link">Über mich</a>
           <a href="coaching.html" class="footer-link">Coaching</a>
-          <a href="#methodik" class="footer-link">Methodik</a>
           <a href="#ablauf" class="footer-link">Ablauf</a>
           <a href="#kontakt" class="footer-link">Kontakt</a>
         </div>
