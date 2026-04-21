@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz — Rocket Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #0F1E35;
+      --navy-lt: #162540;
+      --gold: #C9A84C;
+      --gold-lt: #E8C96A;
+      --gold-dk: #8B6914;
+      --text: #F0F0F0;
+      --muted: rgba(240,240,240,0.65);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(15,30,53,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .logo-wrap { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .logo-img { width:44px; height:44px; border-radius:50%; border:1.5px solid rgba(201,168,76,0.35); object-fit:cover; transition: box-shadow 0.3s ease; }
+    .logo-wrap:hover .logo-img { box-shadow: 0 0 24px rgba(201,168,76,0.3); }
+    .logo-name { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:var(--text); line-height:1.2; }
+    .logo-sub { font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 140px 32px 100px;
+      width: 100%;
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 24px;
+    }
+    .gold-rule {
+      width: 48px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--text); margin-bottom: 12px; margin-top: 40px;
+    }
+    p { font-size: 15.5px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    ul { font-size: 15.5px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+
+    /* FOOTER */
+    footer {
+      background: rgba(0,0,0,0.28);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 56px 48px 32px;
+    }
+    .footer-inner { max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      main { padding: 110px 20px 80px; }
+      footer { padding: 40px 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <img src="brand_assets/Logo Coaching.jpg" alt="Rocket Coaching Logo" class="logo-img">
+    <div>
+      <div class="logo-name">Maximilian Roth</div>
+      <div class="logo-sub">Rocket Coaching</div>
+    </div>
+  </a>
+  <a href="index.html" style="font-size:13px;color:rgba(240,240,240,0.55);font-weight:500;letter-spacing:0.04em;transition:color 0.2s ease;" onmouseover="this.style.color='var(--gold-lt)'" onmouseout="this.style.color='rgba(240,240,240,0.55)'">← Zurück zur Startseite</a>
+</nav>
+
+<main>
+  <div class="eyebrow">Rechtliches</div>
+  <h1>Datenschutz&shy;erklärung</h1>
+  <div class="gold-rule"></div>
+
+  <h2>1. Datenschutz auf einen Blick</h2>
+  <p>
+    Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+  </p>
+
+  <h2>2. Verantwortliche Stelle</h2>
+  <p>
+    Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br><br>
+    Maximilian Roth<br>
+    Mainz<br>
+    E-Mail: <a href="mailto:info@rocket-coaching.com" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">info@rocket-coaching.com</a>
+  </p>
+  <p>
+    Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+  </p>
+
+  <h2>3. Datenerfassung auf dieser Website</h2>
+  <p><strong style="color:var(--text);">Wie werden Ihre Daten erfasst?</strong></p>
+  <p>
+    Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in das Kontaktformular eingeben.
+  </p>
+  <p>
+    Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+  </p>
+
+  <p><strong style="color:var(--text);">Wofür werden Ihre Daten genutzt?</strong></p>
+  <p>
+    Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+  </p>
+
+  <h2>4. Kontaktformular</h2>
+  <p>
+    Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+  </p>
+  <p>
+    Das Kontaktformular dieser Website nutzt den Dienst <strong style="color:var(--text);">Formspree</strong> (Formspree, Inc., San Francisco, USA). Ihre eingegebenen Daten werden an Formspree übertragen und von dort an uns weitergeleitet. Informationen zu den Datenschutzpraktiken von Formspree finden Sie unter: <a href="https://formspree.io/legal/privacy-policy" target="_blank" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">formspree.io/legal/privacy-policy</a>
+  </p>
+  <p>
+    Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
+  </p>
+
+  <h2>5. Ihre Rechte</h2>
+  <p>Sie haben jederzeit das Recht:</p>
+  <ul>
+    <li>unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten,</li>
+    <li>die Berichtigung oder Löschung dieser Daten zu verlangen,</li>
+    <li>die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen,</li>
+    <li>der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen,</li>
+    <li>Datenübertragbarkeit zu verlangen,</li>
+    <li>sich bei einer Aufsichtsbehörde zu beschweren.</li>
+  </ul>
+  <p>
+    Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden: <a href="mailto:info@rocket-coaching.com" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">info@rocket-coaching.com</a>
+  </p>
+
+  <h2>6. Hosting</h2>
+  <p>
+    Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+  </p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:13px;color:rgba(240,240,240,0.28);">© 2026 Maximilian Roth · Rocket Coaching · Mainz</p>
+      <div style="display:flex;gap:24px;">
+        <a href="impressum.html" style="font-size:13px;color:rgba(240,240,240,0.28);text-decoration:none;" onmouseover="this.style.color='rgba(201,168,76,0.7)'" onmouseout="this.style.color='rgba(240,240,240,0.28)'">Impressum</a>
+        <a href="datenschutz.html" style="font-size:13px;color:rgba(201,168,76,0.6);text-decoration:none;">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
